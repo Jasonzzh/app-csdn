@@ -1,0 +1,120 @@
+.index {
+    background: rgb(249,248,251);
+    min-height: 100vh;
+    .nav-top {
+        background: #FFF;
+        color: #333;
+        font-size: 16px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.06);
+    }
+    .contain {
+        margin-top: 30px;
+        padding-bottom: 60px;
+        /deep/ .mint-loadmore-top {
+            transform: scale(0.8);
+            color: rgb(185,185,185);
+        }
+
+        .list-box {
+            margin: 0;
+            padding: 0;
+            .item {
+                margin: 10px 0;
+                .time {
+                    font-size: 12px;
+                    text-align: center;
+                    color: rgb(185,185,185);
+                    line-height: 40px;
+                }
+                .content {
+                    list-style: none;
+                    background: #FFF;
+                    margin: 0 14px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.03);
+                    border-radius: 4px;
+                    .title {
+                        margin: 0 10px;
+                        font-size: 15px;
+                        padding: 14px 0 12px;
+                        line-height: 24px;
+                    }
+                    .cover-image {
+                        margin: 0 10px;
+                        height: 160px;
+                        position: relative;
+                        overflow: hidden;
+                        img {
+                            min-width: 100%;
+                            min-height: 100%;
+                            width: auto;
+                            height: auto;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                    .tag {
+                        margin: 20px 10px;
+                        font-size: 13px;
+                        color: rgb(185,185,185);
+                    }
+                    .button {
+                        line-height: 52px;
+                        border-top: 1px solid rgb(245,245,245);
+                        font-size: 14px;
+                        text-indent: 10px;
+                        position: relative;
+                        img {
+                            width: 18px;
+                            position: absolute;
+                            right: 10px;
+                            top: 17px;
+                        }
+                    }
+                }
+            }
+            // 加载更多
+            .loading-status {
+                .load-cricle {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+                    width: 100%;
+                    margin: 14px 0 10px;
+                    li {
+                        display: block;
+                        list-style: none;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background: #26a2ff;
+                        margin: 0 5px;
+                        &:nth-child(1) {
+                            animation: scale 0.75s 0.12s infinite;
+                        }
+                        &:nth-child(2) {
+                            animation: scale 0.75s 0.24s infinite ;
+                        }
+                        &:nth-child(3) {
+                            animation: scale 0.75s 0.36s infinite;
+                        }
+                    }
+                    @keyframes scale {
+                        0% { transform: scale(1) }
+                        30% { transform: scale(0.3) }
+                        100% { transform: scale(1) }
+                    }
+                }
+                span {
+                    font-size: 12px;
+                    text-align: center;
+                    display: block;
+                    color: rgb(185,185,185);
+                    margin-bottom: 6px;
+                }
+            }
+        }
+    }
+}
