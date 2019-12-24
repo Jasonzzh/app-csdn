@@ -78,6 +78,24 @@ export default {
     created() {
         this.iphoneAdapta()
     },
+    watch: {
+        selected: function(val) {
+            switch (val) {
+                case 'home':
+                    this.$router.push({path: 'index'});
+                    break;
+                case 'find':
+                    this.$router.push({path: 'index'});
+                    break;
+                case 'msg':
+                    this.$router.push({path: 'index'});
+                    break;
+                case 'mine':
+                    this.$router.push({path: 'mine'});
+                    break;
+            }
+        }
+    },
 }
 </script>
 

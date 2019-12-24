@@ -3,4 +3,5 @@ export default {
     index: () => import('../pages/index/index'),
     mine: () => import('../pages/mine/mine'),
     questionDetails: () => import('../pages/questionDetails/questionDetails'),
+    writeAnswer: () => import('../pages/writeAnswer/writeAnswer'),
 }

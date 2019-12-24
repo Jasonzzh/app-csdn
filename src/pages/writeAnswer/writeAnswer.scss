@@ -1,0 +1,82 @@
+.write-answer {
+    position: relative;
+    z-index: 9;
+    background: rgb(245,245,245);
+    min-height: 100vh;
+    .nav-top {
+        background: #FFF;
+        height: 46px;
+        line-height: 46px;
+        /deep/ {
+            .mint-header-title {
+                font-size: 16px;
+                color: #000;
+            }
+            .mintui {
+                color: #000;
+                font-size: 20px;
+            }
+            .is-right button {
+                color: #FFF;
+                background: rgb(205,235,255);
+                width: 68px;
+                height: 28px;
+                border-radius: 14px;
+                font-size: 14px;
+                display: block;
+                margin-left: auto;
+            }
+        }
+    }
+    .title {
+        padding: 56px 14px 10px;
+        background: #FFF;
+        font-size: 15px;
+        line-height: 24px;
+    }
+    .write-thinks {
+        margin-top: 10px;
+        /deep/ {
+            .mint-cell-wrapper {
+                background: #FFF;
+            }
+            textarea {
+                font-size: 15px;
+                font-family: 微软雅黑;
+                letter-spacing: 1px;
+            }
+        }
+        .select {
+            padding: 0 14px;
+            background: #FFF;
+            /deep/ {
+                .mint-checklist-title {
+                    margin: 0;
+                }
+                .mint-cell-wrapper {
+                    padding: 0;
+                    border-top: 1px solid rgba(0,0,0,0.06);
+                }
+                .mint-checklist-label {
+                    padding: 0;
+                }
+                .mint-checkbox-label {
+                    font-size: 14px;
+                    margin-left: 2px;
+                    position: relative;
+                    top: 1px;
+                }
+                .mint-checkbox-core {
+                    width: 14px;
+                    height: 14px;
+                    &::after {
+                        top: 2px;
+                        left: 5px;
+                        width: 3px;
+                        height: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

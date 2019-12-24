@@ -49,8 +49,8 @@ export default {
             category: 6,
             dataList: [],
             arrowRight: require('../../assets/img/arrow-right.png'),
-            loading: true,
-            loadingStatus: false,
+            loading: true, // 触底加载节流
+            loadingStatus: false, // 加载状态
         }
     },
     methods: {

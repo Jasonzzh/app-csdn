@@ -13,9 +13,11 @@ const router = new Router ({
             children: [
                 { path: '', redirect: 'index' },
                 { path: 'index', component: pages.index },
-                { path: 'questionDetails', name: 'questionDetails', component: pages.questionDetails }
+                { path: 'questionDetails', name: 'questionDetails', component: pages.questionDetails },
+                { path: 'writeAnswer', name: 'writeAnswer', component: pages.writeAnswer },
+                { path: 'mine', name: 'mine', component: pages.mine }
             ]
-        }
+        },
     ]
 })
 
