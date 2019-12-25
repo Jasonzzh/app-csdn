@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const urlBase = 'http://www.zhangqinblog.com/api/Jason_Blog/index.php?' // 线上环境
+const urlBase = 'http://www.zhangqinblog.com:8080/API/index.php?' // 线上环境
 // const urlBase = 'http://localhost/newBlog/api/Jason_Blog/index.php?' // 本地环境
 
 // get请求封装
