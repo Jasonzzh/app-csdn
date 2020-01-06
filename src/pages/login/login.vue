@@ -36,19 +36,30 @@ export default {
         login() {
             const { username, password } = this
             if(typeof username == 'undefined' || username == null || username == '') {
-                this.$toast('用户名不能为空!')
+                this.$toast({
+                    message: '用户名不能为空!',
+                    duration: 800
+                })
                 return false
             } else if (typeof password == 'undefined' || password == null || password == '') {
-                this.$toast('请输入密码!')
+                this.$toast({
+                    message: '请输入密码!',
+                    duration: 800
+                })
                 return false
             }
+            this.$indicator.open('正在登录')
             const params = {
                 iphone: username,
                 password,
             }
             post(api.login, params).then(res => {
                 if(res.code == 200) {
-                    this.$toast('登录成功!')
+                    this.$indicator.close()
+                    this.$toast({
+                        message: '登录成功!',
+                        duration: 800
+                    })
                     this.$store.dispatch('user/setUserInfo', res.data)
                     this.goBack()
                 } else {

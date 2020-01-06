@@ -32,12 +32,14 @@
 <script>
 import { post } from '@a/js/req'
 import api from './api'
+import { MessageBox } from 'mint-ui'
 export default {
     data() {
         return {
             placeholder: '大声说出你的想法吧~',
             introduction: '',
             selected: [],
+            userInfo: this.$store.getters['user/getUserInfo'],
         }
     },
     methods: {
@@ -46,20 +48,36 @@ export default {
         },
         // 发布评论
         release() {
-            const { introduction } = this
+            const { introduction, userInfo } = this
             if(introduction == '' || introduction.match(/^\s+$/)) {
-                this.$toast('内容不能为空！')
-                return
+                this.$toast({
+                    message: '内容不能为空！',
+                    duration: 800
+                })
+                return false
             }
             const params = {
-                userId: '',
+                userId: userInfo.id,
                 content: introduction,
                 articleId: this.$route.query.id
             }
+            this.$indicator.open('提交中')
             post(api.releaseComments, params).then(res => {
                 if(res.code == 200) {
-                    this.$toast(res.msg)
+                    this.introduction = ''
+                    this.$indicator.close()
+                    this.$toast({
+                        message: res.msg,
+                        duration: 800
+                    })
                 }
+            })
+        },
+        isLogin() {
+            MessageBox({
+                title: '提示',
+                message: '请先登录',
+                showCancelButton: true
             })
         }
     },
