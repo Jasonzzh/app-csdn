@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { post } from '../../assets/js/req'
+import { post } from '@a/js/req'
 import api from './api'
 export default {
     data() {
@@ -54,7 +54,7 @@ export default {
             const params = {
                 userId: '',
                 content: introduction,
-                articleId: this.route.query.id
+                articleId: this.$route.query.id
             }
             post(api.releaseComments, params).then(res => {
                 if(res.code == 200) {

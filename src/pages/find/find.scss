@@ -1,0 +1,13 @@
+.find {
+    position: relative;
+    background: rgb(245,245,245);
+    min-height: 100vh;
+    .nav-tab {
+        /deep/ {
+            .mint-tab-item-label {
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

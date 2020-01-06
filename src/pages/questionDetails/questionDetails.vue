@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="feel-like">
-                            <img src="../../assets/img/like.png"/>
+                            <img src="@img/like.png"/>
                             {{ item.commentLike }}
                         </div>
                     </div>
@@ -54,31 +54,31 @@
         <div class="foot-bar" :style="{paddingBottom: isIphoneX ? '26px' : '10px'}" v-show="!autofocus">
             <div class="bar-box">
                 <div class="input" @click="goWriteAnswer">
-                    <img src="../../assets/img/writeIcon.png"/>{{ placeholder }}
+                    <img src="@img/writeIcon.png"/>{{ placeholder }}
                 </div>
                 <div class="comment-nums">
-                    <img src="../../assets/img/commentIcon.png"/>
+                    <img src="@img/commentIcon.png"/>
                     <span>{{ commentList.length }}</span>
                 </div>
                 <div class="good-like">
-                    <img src="../../assets/img/like.png"/>
+                    <img src="@img/like.png"/>
                     <span>{{ deatilsData.clickLike }}</span>
                 </div>
-                <img src="../../assets/img/likeIcon.png" class="collection"/>
-                <img src="../../assets/img/shareIcon.png" class="share"/>
+                <img src="@img/likeIcon.png" class="collection"/>
+                <img src="@img/shareIcon.png" class="share"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { post } from '../../assets/js/req'
+import { post } from '@a/js/req'
 import api from './api'
 export default {
     data() {
         return {
             isIphoneX: localStorage.getItem('isIphoneX'),
-            defaultPortrait: require('../../assets/img/default-image.png'),
+            defaultPortrait: require('@img/default-image.png'),
             deatilsData: {}, // 文章详情
             commentList: [], // 评论
             placeholder: '快来说点什么吧~',

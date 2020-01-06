@@ -8,5 +8,6 @@ module.exports = {
   chainWebpack: (config)=>{
     config.resolve.alias
       .set('@img',resolve('src/assets/img'))
+      .set('@a',resolve('src/assets'))
   }
 }

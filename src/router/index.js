@@ -15,7 +15,10 @@ const router = new Router ({
                 { path: 'index', component: pages.index },
                 { path: 'questionDetails', name: 'questionDetails', component: pages.questionDetails },
                 { path: 'writeAnswer', name: 'writeAnswer', component: pages.writeAnswer },
-                { path: 'mine', name: 'mine', component: pages.mine }
+                { path: 'mine', name: 'mine', component: pages.mine },
+                { path: 'login', name: 'login', component: pages.login },
+                { path: 'find', name: 'find', component: pages.find },
+                { path: 'message', name: 'message', component: pages.message },
             ]
         },
     ]

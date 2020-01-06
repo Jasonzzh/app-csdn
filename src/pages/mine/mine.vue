@@ -1,16 +1,16 @@
 <template>
   <div class="mine">
     <div class="user-info">
-      <div class="user-login">
+      <div class="user-login" @click="goProfile">
         <div class="user-img">
-          <img src="@img/mine/default-image.png"/>
+          <img :src="userInfo ? userInfo.userPic : defaultImage"/>
         </div>
         <div class="user-action">
-          <span>登录</span>
-          <span>/</span>
-          <span>注册</span>
-          <span>一知半解</span>
-          <div class="user-name">用户名: 无</div>
+          <span v-if="!userInfo">登录</span>
+          <span v-if="!userInfo">/</span>
+          <span v-if="!userInfo">注册</span>
+          <span v-if="userInfo">{{userInfo.name}}</span>
+          <div class="user-name">用户名: {{userInfo ? userInfo.id : '无'}}</div>
         </div>
         <div class="arrow-right-box">
           <img src="@img/mine/arrow-right.png" class="arrow-right"/>
@@ -84,11 +84,20 @@
 export default {
   data() {
     return {
-
+      userInfo: this.$store.getters['user/getUserInfo'],
+      defaultImage: require('@img/mine/default-image.png')
     }
   },
   methods: {
-
+    goLogin() {
+      this.$router.push({
+        path: 'login'
+      })
+    },
+    goProfile() {
+      const { userInfo } = this
+      if(!userInfo) this.goLogin()
+    }
   }
 }
 </script>

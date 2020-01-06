@@ -4,4 +4,7 @@ export default {
     mine: () => import('../pages/mine/mine'),
     questionDetails: () => import('../pages/questionDetails/questionDetails'),
     writeAnswer: () => import('../pages/writeAnswer/writeAnswer'),
+    login: () => import('../pages/login/login'),
+    find: () => import('../pages/find/find'),
+    message: () => import('../pages/message/message')
 }

@@ -42,20 +42,20 @@ export default {
             selected: 'home',
             isIphoneX: false,
             iconHome: {
-                normal: require('../../assets/img/tab/home.png'),
-                active: require('../../assets/img/tab/home-active.png')
+                normal: require('@img/tab/home.png'),
+                active: require('@img/tab/home-active.png')
             },
             iconFind: {
-                normal: require('../../assets/img/tab/find.png'),
-                active: require('../../assets/img/tab/find-active.png')
+                normal: require('@img/tab/find.png'),
+                active: require('@img/tab/find-active.png')
             },
             iconMsg: {
-                normal: require('../../assets/img/tab/msg.png'),
-                active: require('../../assets/img/tab/msg-active.png')
+                normal: require('@img/tab/msg.png'),
+                active: require('@img/tab/msg-active.png')
             },
             iconMine: {
-                normal: require('../../assets/img/tab/mine.png'),
-                active: require('../../assets/img/tab/mine-active.png')
+                normal: require('@img/tab/mine.png'),
+                active: require('@img/tab/mine-active.png')
             },
         }
     },
@@ -77,28 +77,30 @@ export default {
     },
     created() {
         this.iphoneAdapta()
+        this.selected = this.$store.getters['device/getOnTab']
     },
     watch: {
         selected: function(val) {
+            this.$store.dispatch('device/setOnTab',val)
             switch (val) {
                 case 'home':
                     this.$router.push({path: 'index'});
                     break;
                 case 'find':
-                    this.$router.push({path: 'index'});
+                    this.$router.push({path: 'find'});
                     break;
                 case 'msg':
-                    this.$router.push({path: 'index'});
+                    this.$router.push({path: 'message'});
                     break;
                 case 'mine':
                     this.$router.push({path: 'mine'});
                     break;
             }
         }
-    },
+    }
 }
 </script>
 
 <style lang='scss' scoped>
-    @import 'tab.scss'
+    @import 'tab.scss';
 </style>

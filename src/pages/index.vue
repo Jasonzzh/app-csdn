@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-view />
-        <v-tab />
+        <v-tab v-show="isTab"/>
     </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
     },
     components: {
         'v-tab': Tab,
+    },
+    computed: {
+        isTab () {
+            return this.$store.state.device.isTab
+        }
     }
 }
 </script>

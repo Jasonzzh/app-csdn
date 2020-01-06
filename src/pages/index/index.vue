@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { post } from '../../assets/js/req'
+import { post } from '@a/js/req'
 import api from './api'
 export default {
     data() {
@@ -48,7 +48,7 @@ export default {
             nums: 10,
             category: 6,
             dataList: [],
-            arrowRight: require('../../assets/img/arrow-right.png'),
+            arrowRight: require('@img/arrow-right.png'),
             loading: true, // 触底加载节流
             loadingStatus: false, // 加载状态
         }
