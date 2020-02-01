@@ -12,18 +12,18 @@ Vue.config.productionTip = false
 const tab = ['/index', '/find', '/message', '/mine']
 // 设置路由
 router.beforeEach((to, from, next) => {
-  // 跳转前判断是否需要登录
-  if(tab.indexOf(to.path) != -1) {
-    store.dispatch('device/setIsTab', true)
-  } else {
-    store.dispatch('device/setIsTab', false)
-  }
-  next()
+    // 跳转前判断是否需要登录
+    if(tab.indexOf(to.path) != -1) {
+        store.dispatch('device/setIsTab', true)
+    } else {
+        store.dispatch('device/setIsTab', false)
+    }
+    next()
 })
 
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App),
+    el: '#app',
+    router,
+    store,
+    render: h => h(App),
 }).$mount('#app')

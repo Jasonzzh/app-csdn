@@ -9,5 +9,10 @@ module.exports = {
     config.resolve.alias
       .set('@img',resolve('src/assets/img'))
       .set('@a',resolve('src/assets'))
-  }
+  },
+  publicPath:'./',
+
+  outputDir:'dist',
+
+  assetsDir:'assets',
 }
