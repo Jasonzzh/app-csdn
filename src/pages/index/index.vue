@@ -96,7 +96,11 @@ export default {
         },
         // 跳转进详情页
         goDetails(id) {
-            this.$router.push({
+            console.log(this.$store.getters['routes/getRoutes'])
+            const url = 'questionDetails?id=' + id
+            this.$store.commit('routes/addRoutes', url)
+            console.log(this.$store.getters['routes/getRoutes'])
+            this.$router.replace({
                 path: 'questionDetails',
                 query: {
                     id,

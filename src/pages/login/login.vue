@@ -31,7 +31,9 @@ export default {
     },
     methods: {
         goBack() {
-            this.$router.go(-1)
+            this.$store.commit('routes/deleteRoutes')
+            const url = this.$store.getters['routes/getRoutes']
+            this.$router.replace([...url].pop())
         },
         login() {
             const { username, password } = this

@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+axios.defaults.timeout = 5000
 const urlBase = 'http://www.zhangqinblog.com:8080/API/index.php?' // 线上环境
 // const urlBase = 'http://localhost/newBlog/api/Jason_Blog/index.php?' // 本地环境
 

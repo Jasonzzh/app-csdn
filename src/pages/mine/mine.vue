@@ -90,7 +90,8 @@ export default {
     },
     methods: {
         goLogin() {
-            this.$router.push({
+            this.$store.dispatch('routes/addRoutes', 'login')
+            this.$router.replace({
                 path: 'login'
             })
         },

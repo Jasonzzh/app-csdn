@@ -84,16 +84,20 @@ export default {
             this.$store.dispatch('device/setOnTab',val)
             switch (val) {
                 case 'home':
-                    this.$router.push({path: 'index'});
+                    this.$store.dispatch('routes/addRoutes', 'index')
+                    this.$router.replace({path: 'index'});
                     break;
                 case 'find':
-                    this.$router.push({path: 'find'});
+                    this.$store.dispatch('routes/addRoutes', 'find')
+                    this.$router.replace({path: 'find'});
                     break;
                 case 'msg':
-                    this.$router.push({path: 'message'});
+                    this.$store.dispatch('routes/addRoutes', 'message')
+                    this.$router.replace({path: 'message'});
                     break;
                 case 'mine':
-                    this.$router.push({path: 'mine'});
+                    this.$store.dispatch('routes/addRoutes', 'mine')
+                    this.$router.replace({path: 'mine'});
                     break;
             }
         }

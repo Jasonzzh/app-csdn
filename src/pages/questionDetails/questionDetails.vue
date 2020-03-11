@@ -91,7 +91,9 @@ export default {
     },
     methods: {
         goBack() {
-            this.$router.go(-1)
+            this.$store.commit('routes/deleteRoutes')
+            const url = this.$store.getters['routes/getRoutes']
+            this.$router.replace([...url].pop())
         },
         // 获取文详情数据
         getDetailsData() {
@@ -140,11 +142,14 @@ export default {
         },
         // 跳转写回答
         goWriteAnswer() {
-            this.$router.push({
+            const { id, title } = this.deatilsData
+            , url = 'writeAnswer?id=' + id + '&title=' + title
+            this.$store.dispatch('routes/addRoutes', url)
+            this.$router.replace({
                 path: 'writeAnswer',
                 query: {
-                    id: this.$route.query.id,
-                    title: this.deatilsData.title
+                    id,
+                    title,
                 }
             })
         }
