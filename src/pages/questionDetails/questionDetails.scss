@@ -2,31 +2,25 @@
     position: relative;
     z-index: 9;
     background: rgb(245,245,245);
-    .nav-top {
-        background: #FFF;
-        box-shadow: 0 0 10px rgba(0,0,0,0.06);
-        height: 46px;
-        line-height: 46px;
-        /deep/ {
-            .mint-header-title {
-                font-size: 16px;
-                color: #000;
-            }
-            .mintui {
-                color: #000;
-                font-size: 20px;
-            }
-        }
-    }
     .article-detail {
         position: relative;
-        padding: 52px 14px 0;
+        padding: 10px 14px 0;
         background: #FFF;
         .title {
             font-size: 20px;
             font-weight: bold;
             color: #333333;
             line-height: 30px;
+            /deep/ {
+                .mint-button--default {
+                    background: #FFF;
+                    box-shadow: none;
+                    height: auto;
+                    padding: 0 3px 0 0;
+                    position: relative;
+                    top: -2px;
+                }
+            }
         }
         .userInfo {
             display: flex;

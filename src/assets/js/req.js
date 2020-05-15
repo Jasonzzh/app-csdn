@@ -19,7 +19,7 @@ const get = (url, params) => {
 // post请求封装
 const post = (url, params) => {
     return new Promise((resolve, reject) => {
-         axios.post(urlBase + url, JSON.stringify(params))
+        axios.post(urlBase + url, JSON.stringify(params))
         .then(res => {
             resolve(res.data);
         })

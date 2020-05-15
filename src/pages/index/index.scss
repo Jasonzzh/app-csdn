@@ -1,27 +1,16 @@
 .index {
     background: rgb(249,248,251);
     min-height: 100vh;
-    .nav-top {
-        background: #FFF;
-        color: #333;
-        font-size: 16px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.06);
-        height: 46px;
-        line-height: 46px;
-    }
     .contain {
-        margin-top: 36px;
         padding-bottom: 60px;
         /deep/ .mint-loadmore-top {
             transform: scale(0.8);
             color: rgb(185,185,185);
         }
-
         .list-box {
             margin: 0;
             padding: 0;
             .item {
-                margin: 10px 0;
                 .time {
                     font-size: 12px;
                     text-align: center;

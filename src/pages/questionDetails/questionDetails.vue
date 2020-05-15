@@ -1,10 +1,10 @@
 <template>
     <div class="question-details">
-        <mt-header fixed title="问题详情" class="nav-top">
-            <mt-button icon="back" slot="left" @click="goBack"/>
-        </mt-header>
         <div class="article-detail">
-            <div class="title">{{ deatilsData.title }}</div>
+            <div class="title">
+                <mt-button icon="back" slot="left" @click="goBack"/>
+                {{ deatilsData.title }}
+            </div>
             <div class="userInfo">
                 <img :src="deatilsData.authorPortrait ? deatilsData.authorPortrait : defaultPortrait" class="userPic"/>
                 <div class="name">
