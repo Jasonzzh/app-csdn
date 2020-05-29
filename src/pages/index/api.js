@@ -1,5 +1,5 @@
 const api = {
-    getDataList: 'controller=getIndex&method=followBlogList'
+    getDataList: 'getIndex/followBlogList'
 }
 
 export default api

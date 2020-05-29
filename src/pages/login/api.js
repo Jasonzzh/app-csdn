@@ -1,5 +1,5 @@
 const api = {
-    login: 'controller=getIndex&method=login',
+    login: 'getIndex/login',
 }
 
 export default api

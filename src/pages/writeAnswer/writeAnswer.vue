@@ -72,6 +72,7 @@ export default {
                         message: res.msg,
                         duration: 800
                     })
+                    this.goBack()
                 }
             })
         },

@@ -14,10 +14,16 @@ const tab = ['/index', '/find', '/message', '/mine']
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title
     // 跳转前判断是否需要登录
-    if(tab.indexOf(to.path) != -1) {
+    if (tab.indexOf(to.path) != -1) {
         store.dispatch('device/setIsTab', true)
     } else {
         store.dispatch('device/setIsTab', false)
+    }
+    if (to.meta.requireAuth) {
+      const userInfo = store.getters['user/getUserInfo']
+      if (!userInfo) {
+        next('login')
+      }
     }
     next()
 })

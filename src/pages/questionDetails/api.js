@@ -1,6 +1,6 @@
 const api = {
-    getDeatilsData: 'controller=getIndex&method=article_detail',
-    getComments: 'controller=comment&method=getComments',
+    getDeatilsData: 'getIndex/article_detail',
+    getComments: 'comment/getComments',
 }
 
 export default api

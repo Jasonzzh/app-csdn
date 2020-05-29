@@ -1,5 +1,5 @@
 const api = {
-    releaseComments: 'controller=comment&method=releaseComments'
+    releaseComments: 'comment/releaseComments'
 }
 
 export default api
